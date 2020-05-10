@@ -1,0 +1,207 @@
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+<style>
+
+    html, body {
+        font-family: "Exo 2";
+        font-size: 16px;
+    }
+
+
+    h1, h2, h3 { font-weight: normal; }
+
+    h2 { margin-block-start: 1.13em; }
+
+    .os {
+        width: 64px;
+        height: 64px;
+        color: red;
+        fill: currentColor;
+
+        /*filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(136deg) brightness(104%) contrast(97%);
+*/
+
+
+        filter: brightness(140%);
+    }
+
+    #apple {
+        color: red;
+        fill: currentColor;
+
+    }
+
+    a {
+        color: #009688;
+        text-decoration: none;
+    }
+
+    a:hover {
+        filter: brightness(50%);
+    }
+
+    .file-list {
+        display: flex;
+        flex-direction: column;;
+    }
+
+    .file-link {
+        display: flex;
+        flex-direction: row;
+        padding: 6px;
+        font-size: 16px;
+    }
+
+    .file {
+        min-width: 220px;
+    }
+
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-bottom: -10px;
+        margin-right: 14px;
+    }
+
+    .icon-github { background-image: url('resources/images/github.svg') }
+    .icon-docker { background-image: url('resources/images/docker.svg'); width: 32px; height: 32px; }
+
+    section {
+        padding: 0px 92px 0px 92px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .intro {
+        width: 50vw;
+
+    }
+
+    .separator {
+        flex: 1;
+    }
+    /*
+    li:before {
+        background-image: url(images/github.svg);
+        width: 24px;
+        height: 24px;
+        border: 1px solid red;*/
+/*content: '\1F95E';*/
+/*margin-left: -20px;
+margin-right: 10px;*//*
+display: block;
+position: relative;
+}*/
+
+    li {
+        padding: 4px;
+        /*list-style-image: url(images/github.svg);
+        padding: .3em 0 1em 40px;*/
+    }
+
+    .components li {
+        padding: 3px;
+    }
+
+</style>
+
+<section>
+    <div class='intro'>
+        <h2>KDX</h2>
+        <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
+        software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
+        full node software as well as it's Kasparov components that provide Kaspa BlockDAG API services.</p>
+
+        <p>KDX is not a wallet (although it does include Kaspa's functional command-line wallet demo).</p>
+        <p>
+            Developers looking to integrate with Kaspa can leverage KDX to easily test integrations
+            with their development environments.  In production, developers are enouraged to setup their own deployment
+            of the Kaspa software stack by building software from sources or building docker images.
+        </p>
+
+        &nbsp;<br/>
+
+        <center>
+            <img src="resources/images/kdx-ui-01.png" />
+        </center>
+        &nbsp;<br/>
+
+        <h2>Developers</h2>
+        <ul>
+            <li>KDX includes a miniature 'build toolchain' that allows
+            you to re-build Kaspa software stack directly from GitHub sources.</li>
+            <li>KDX includes and instance of KExplorer (Kaspa DAGchain explorer) project configured against local instance of Kasparov API server.</li>
+        </ul>
+
+        <p>
+            
+        </p>
+
+    </div>
+    <div class='separator'></div>
+    <div>
+        <div><h2>Download KDX</h2></div>
+        <div id="file-list"></div>
+
+        <div style="text-align: left;">
+            <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
+        </div>
+        
+        <div>
+            <span class="file-link" href=""><div class="icon icon-docker"></div><div>
+                Docker images can be generated<br/> directly from KDX sources.
+            </div></span>
+            
+        </div>
+        
+        
+        <div><h2>Sources</h2></div>
+        <div>
+            <a class="file-link" href=""><div class="icon icon-github"></div><div>http://github.com/aspectron/kdx</div></a>
+        </div>
+
+        <div><h2>KDX Components</h2></div>
+        <div>
+            <div style="margin-left:24px;">
+                KDX package includes<br/>following components:
+            </div>
+            <ul class="components">
+                <li>PostgreSQL (database)</li>
+                <li>Mosquitto (MQTT broker)</li>
+                <li>Kaspad full node daemon</li>
+                <li>Kasparov API server</li>
+                <li>Kasparov blockDAG sync server</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- section>
+    <div>
+        <div>
+            <h2>Building KDX</h2>
+        </div>
+    </div>
+</section -->
+<script>
+    const KDX_VERSION = "1.0.0";
+    let fileList = document.getElementById('file-list');
+    Object.entries({
+        'windows-x64.zip' : 'portable',
+        'windows-x64.exe' : 'installer',
+        'darwin-x64.dmg' : 'DMG image',
+        'darwin-x64.zip' : 'portable',
+        'linux-x64.zip' : 'portable',
+    }).forEach(([build,descr]) => {
+        let os = build.split('-').shift();
+        let file = `kdx-v${KDX_VERSION}-${build}`;
+        fileList.innerHTML += `<a class="file-link" href=""><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div>${descr}</div></a>`;
+    });
+</script>
+
