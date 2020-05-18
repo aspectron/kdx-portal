@@ -44,7 +44,7 @@
 
     .file-list {
         display: flex;
-        flex-direction: column;;
+        flex-direction: column;
     }
 
     .file-link {
@@ -109,6 +109,26 @@ position: relative;
         padding: 3px;
     }
 
+    .sha {
+        margin-left: 8px;
+        padding: 6px 6px 6px 8px;
+        border-left: 1px solid #eee;
+    }
+
+    .screen-shot {
+        width: 580px;
+        height: auto;
+    }
+
+    .descr {
+        min-width: 100px;
+    }
+
+    .dl-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
 </style>
 
 <section>
@@ -118,7 +138,7 @@ position: relative;
         software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
         full node software as well as Kasparov components that provide Kaspa BlockDAG API services.</p>
 
-        <p>KDX is not a wallet (although it does include Kaspa's functional command-line wallet demo).</p>
+        <p>KDX is not a wallet (although it does include Kaspa's command-line wallet demo).</p>
         <p>
             Developers looking to integrate with Kaspa can leverage KDX to easily test integrations
             with their development environments.  In production, developers are enouraged to setup their own deployment
@@ -128,7 +148,7 @@ position: relative;
         &nbsp;<br/>
 
         <center>
-            <img src="resources/images/kdx-ui-01.png" />
+            <img class='screen-shot' src="resources/images/kdx-ui-01.png" />
         </center>
         &nbsp;<br/>
 
@@ -201,7 +221,7 @@ position: relative;
     }).forEach(([build,descr]) => {
         let os = build.split('-').shift();
         let file = `kdx-v${KDX_VERSION}-${build}`;
-        fileList.innerHTML += `<a class="file-link" href=""><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div>${descr}</div></a>`;
+        fileList.innerHTML += `<div class='dl-wrapper'><a class="file-link" href="downloads/${file}"><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div class='descr'>${descr}</div></a><a class="sha-link" href="downloads/${file}.sha1sum"><div class='sha'>SHA1</div></a></div>`;
     });
 </script>
 
