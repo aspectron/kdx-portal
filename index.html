@@ -129,6 +129,11 @@ position: relative;
         flex-direction: row;
     }
 
+    .disable {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
 </style>
 
 <section>
@@ -152,7 +157,7 @@ position: relative;
         </center>
         &nbsp;<br/>
 
-        <h2>Developers 123</h2>
+        <h2>Developers</h2>
         <ul>
             <li>KDX includes a miniature build toolchain that allows
             you to rebuild Kaspa software stack directly from GitHub sources.</li>
@@ -213,15 +218,20 @@ position: relative;
     const KDX_VERSION = "1.0.0";
     let fileList = document.getElementById('file-list');
     Object.entries({
-        'windows-x64.zip' : 'portable',
         'windows-x64.exe' : 'installer',
-        'darwin-x64.dmg' : 'DMG image',
-        'darwin-x64.zip' : 'portable',
-        'linux-x64.zip' : 'portable',
+        'windows-x64.zip' : 'portable',
+        '-darwin-x64.dmg' : 'DMG image',
+        '-darwin-x64.zip' : 'portable',
+        '-linux-x64.zip' : 'portable',
     }).forEach(([build,descr]) => {
+        let disable = '';
+        if(build.charAt(0) == '-') {
+            build = build.substring(1);
+            disable = 'disable';
+        }
         let os = build.split('-').shift();
         let file = `kdx-v${KDX_VERSION}-${build}`;
-        fileList.innerHTML += `<div class='dl-wrapper'><a class="file-link" href="downloads/${file}"><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div class='descr'>${descr}</div></a><a class="sha-link" href="downloads/${file}.sha1sum"><div class='sha'>SHA1</div></a></div>`;
+        fileList.innerHTML += `<div class='dl-wrapper ${disable}'><a class="file-link" href="downloads/${file}"><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div class='descr'>${descr}</div></a><a class="sha-link" href="downloads/${file}.sha1sum"><div class='sha'>SHA1</div></a></div>`;
     });
 </script>
 
