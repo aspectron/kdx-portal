@@ -151,13 +151,20 @@ position: relative;
     }
     
     [red] {
-        color: #a00;
+        color: rgb(49, 8, 8);
     }
     .workaround {
         max-width: 560px;
         height: auto;
         margin: 8px 32px 32px 32px;
         border: 2px solid #ccc;
+    }
+
+    .osx-workaround {
+        max-width: 460px;
+        height: auto;
+        margin: 8px 32px 32px 32px;
+
     }
 
     [bold] {
@@ -213,7 +220,7 @@ position: relative;
     <div flex>&nbsp;</div>
     <div>
         <div><h2>Download KDX</h2></div>
-        <div red notice><i class="fal fa-exclamation-triangle fa-lg"></i> Windows Users - Please read the note below!</div>
+        <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
         <div id="file-list"></div>
 
         <div style="text-align: left;">
@@ -263,9 +270,43 @@ position: relative;
             <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
         </ul>
 
-        <h2 red><i class="fal fa-exclamation-triangle fa-lg"></i> Note to Windows Users</h2>
+        <h2 red><i xclass="fal fa-exclamation-triangle fa-lg"></i> Mac OS - Known Problems</h2>
         <p>
-            We have recently discovered a compatibility issue between PostgreSQL database module
+            
+            <center>
+                Mac OS prevents unsigned applications from execution.  When running KDX first time,
+                you will be prompted with a warning, preventing you from running KDX:
+                <br/>
+                <img class='osx-workaround' src="resources/images/osx-warning-dialog.png" />
+            </center>
+
+            
+            <center>
+                Go to System Preferences, where you will see a note, allowing you to "Open Anyway"
+                <br/>
+                <img class='osx-workaround' style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
+            </center>
+            
+            
+            <!-- center>
+                You will be prompted with a warning again:
+                <br/>
+                <img class='osx-workaround' src="resources/images/osx-settings-confirmation.png" />
+            </center -->
+            
+            
+            <center>
+                Alternatively:
+                <br/>
+                <img class='osx-workaround' style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
+            </center>
+
+
+        </p>
+
+        <h2 red><i xclass="fal fa-exclamation-triangle fa-lg"></i> Windows - Known Problems</h2>
+        <p>
+            Some OEM computers experience compatibility issue between PostgreSQL database module
             and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
             exists across DELL computers with manufacturer pre-installed Windows.
         </p>
@@ -275,14 +316,12 @@ position: relative;
             
         </p>
         <p>
-            In short - Microsoft have introduced an experimental beta option for computer locale settings
+            Microsoft have introduced an experimental beta option for computer locale settings
             that causes a variety of application compatibility issues and on some OEM OS installations
             this option is turned on by default, which it should not be.
         </p>
         <p>
-            We can integrate a script to address this in the KDX installer,
-            however, it really should be fixed in PostgreSQL itself. <span bold red>While we work on addressing this, you need to
-            apply the following workaround:</span>
+            If you are experiencing this, you need to apply the following workaround:</span>
         </p>
         <br/>
         <p>
