@@ -374,11 +374,11 @@ position: relative;
     }).forEach(([file,descr]) => {
         let disable = '';
         if(file.charAt(0) == '-') {
-            file = build.substring(1);
+            file = file.substring(1);
             disable = 'disable';
         }
-        let [filename, extension] = file.split('.');
-        let [app,version,os,platform] = filename.split('-');
+
+        let [app,version,os,platform] = file.split('-');
         fileList.innerHTML += `<div class='dl-wrapper ${disable}'><a class="file-link" href="downloads/${file}"><div class="icon" style="background-image:url('resources/images/${os}.svg')"></div><div class='file'>${file}</div><div class='descr'>${descr}</div></a><a class="sha-link" href="downloads/${file}.sha1sum"><div class='sha'>SHA1</div></a></div>`;
     });
 </script>
