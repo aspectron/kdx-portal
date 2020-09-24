@@ -1,4 +1,6 @@
-import {BaseElement, html} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
+//import {BaseElement, html} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
+import {BaseElement, html, css} from '../../node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
+
 export class HomePage extends BaseElement{
 	createRenderRoot(){
 		return this;
@@ -174,16 +176,15 @@ export class HomePage extends BaseElement{
             }
 
             let [app,version,os,platform] = file.split('-');
-            return html`<div class="dl-wrapper ${disable}">
-            	<a class="file-link" href="downloads/${file}">
-	            	<div class="icon" style="background-image:url(resources/images/${os}.svg)"></div>
-	            	<div class="file">${file}</div>
-	            	<div class="descr">${descr}</div>
-            	</a>
-            	<a class="sha-link" href="downloads/${file}.sha1sum">
-            		<div class="sha">SHA1</div>
-            	</a>
-        	</div>`;
+            return html`
+            <flow-download-badge class="dl-wrapper ${disable}"
+            	file="downloads/${file}"
+            	icon="resources/images/${os}.svg"
+            	title="${file}"
+            	descr="${descr}"
+            	sha1="downloads/${file}.sha1sum"
+            	></flow-download-badge>
+            `;
         });
 	}
 }
