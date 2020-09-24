@@ -1,0 +1,76 @@
+html,body{font-size:16px;}
+body{
+	font-family:"Open Sans",sans-serif;
+	--flow-app-header-padding:0px 50px;
+	color:#161925;
+	--flow-primary-color:#5a5d93;
+	--flow-color:#161925;
+	--flow-btn-radius:0px;
+	--flow-btn-border-width:0px;
+	--flow-btn-primary-bg-color:#5a5d93;
+	--flow-btn-bg-color:#5a5d93;
+	--flow-btn-color:#FFF;
+	--flow-btn-hover-bg-color:#7578ab;
+	--flow-btn-hover-color:#FFF;
+	--flow-btn-hover-primary-bg-color:#7578ab;
+	--flow-btn-font-size:1rem;
+	--flow-btn-font-weight:normal;
+	--flow-btn-padding:12px 32px;
+	--flow-btn-font-family:"Open Sans",sans-serif;
+	--flow-btn-wrapper-margin:0px;
+	--flow-btn-line-height:1.5rem;
+	--flow-btn-secondary-bg-color:#212638;
+	--flow-btn-hover-secondary-bg-color:#7578ab;
+
+	--flow-menu-item-padding:10px;
+}
+
+flow-dropdown[slot="header"]{margin:0px;}
+.link,
+flow-dropdown[slot="header"] [slot="trigger"]{
+	font-family: "Encode Sans",sans-serif;
+    font-weight:500;
+    padding:4px;
+    margin-left:12px;
+    border-bottom:2px solid transparent;
+}
+.link:hover,
+flow-dropdown[slot="header"] [slot="trigger"]:hover{
+	border-bottom:2px solid #f46036;
+}
+.logo{margin:0px 10px;}
+a.logo img.logo{height:100%}
+h3{margin-top:20px;}
+.banner{padding:40px 40px;background-color:#1a1d2b}
+.banner h1,
+.banner h2{
+	color:#91aec1;font-weight:400;margin:0 0 12px 0;line-height:2.625rem;
+}
+.banner h1{font-size:2.625rem;}
+.banner h2{font-family:"Open Sans",sans-serif;font-size:2.375rem}
+.banner h3{font-size:1.75rem;color:#5a5d93;font-weight:400;margin-bottom:12px}
+.banner p{color:#FFF}
+.jumbo{margin:40px 0 40px 0;align-items: center;justify-content: center;}
+.jumbo .jumbo-links{margin-top:24px;word-spacing:24px;line-height:68px}
+.jumbo .jumbo-links flow-btn{word-spacing:initial;margin:5px}
+.section, section{padding:20px}
+.m-5{margin:5px}
+.m-10{margin:10px}
+.m-20{margin:20px}
+
+@media(max-width:1047px){
+	.jumbo .jumbo-links,
+	.jumbo>div{text-align:center;}
+	.banner h1{font-size:2rem;line-height:1.1}
+	.banner h2{font-size:2.33rem;line-height:1.1}
+	.jumbo-logo{margin:20px 0 48px 0;}
+}
+
+@media(min-width:1048px){
+	.lg-h-box{display:flex;flex-direction:row;justify-content: space-around;}
+}
+
+@media(min-width:768px){
+	.md-h-box{display:flex;flex-direction:row;}
+}
+.banner .logo {width:260px;padding:10px 30px;}
