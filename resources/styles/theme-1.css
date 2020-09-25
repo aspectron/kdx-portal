@@ -3,9 +3,9 @@ body{
 	font-family:"Open Sans",sans-serif;
 	--flow-app-header-padding:0px 50px;
 	color:#161925;
-	--flow-primary-color:#5a5d93;
+	/* --flow-primary-color:#5a5d93; */
 	--flow-color:#161925;
-	--flow-btn-radius:0px;
+	--flow-btn-radius:10px;
 	--flow-btn-border-width:0px;
 	--flow-btn-primary-bg-color:#5a5d93;
 	--flow-btn-bg-color:#5a5d93;
@@ -23,6 +23,27 @@ body{
 	--flow-btn-hover-secondary-bg-color:#7578ab;
 
 	--flow-menu-item-padding:10px;
+
+
+
+	--flow-primary-color:rgba(0, 150, 136, 1);
+	--flow-border-color:rgb(0, 133, 119);
+	--flow-border-hover-color:rgba(2, 97, 74, 1);
+	--flow-tab-font-size:1.5rem;
+	--flow-link-color:rgba(0, 150, 136, 1);
+    --flow-link-hover-color:rgba(0,121,85,1.0);
+	--flow-data-badge-caption: #000;
+    --flow-data-badge-caption-shadow: rgba(0,151,115,1.0);
+
+	opacity:1;
+	transition:opacity 0.5s ease;
+
+	--flow-link-color:  rgba(0,150,136,1);
+	--flow-link-hover-color:  rgb(0, 105, 95);	
+
+	--flow-btn-bg-color:rgba(0, 150, 136, 1);
+	--flow-btn-primary-bg-color:rgba(0, 150, 136, 1);
+
 }
 
 flow-dropdown[slot="header"]{margin:0px;}
