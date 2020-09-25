@@ -14,9 +14,8 @@ export class HomePage extends BaseElement{
 	async init(){
 		//this.initSocketIORPC();
 		//await this.initSocketIONATS();
-        this.initUI();
-        console.log("IN INIT()");
-	//	dpc(()=>this.setLoading(false));
+        //console.log("IN INIT()");
+	    //dpc(()=>this.setLoading(false));
 	}
 
 	initUI(){
@@ -35,8 +34,10 @@ export class HomePage extends BaseElement{
         <img slot="header" class="logo" src="resources/images/kdx.svg" />
         <div slot="header">KDX</div>
         <div slot="header" class="flex"></div>
-        <a id="top-menu" slot="header" data-menu="home" class="active">Home</a>
-        <a id="top-menu" slot="header" data-menu="faq">FAQ</a>
+        <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
+            <a data-menu="home" class="active">Home</a>
+            <a data-menu="faq">FAQ</a>
+        </div>
         
         <div slot="main">
             <div for="home" class="tab-content">
@@ -281,7 +282,7 @@ export class HomePage extends BaseElement{
     activateMenu(menu){
 		console.log("MENU", menu)
 		window.location.hash = menu;
-		this.bodyEl.querySelectorAll(".tab-content").forEach(el=>{
+		this.renderRoot.querySelectorAll(".tab-content, [data-menu]").forEach(el=>{
 			let m = el.getAttribute("data-menu") || el.getAttribute("for");
 			if(el.classList.contains("active")){
 				if(m == menu)
@@ -293,27 +294,31 @@ export class HomePage extends BaseElement{
 			}
 		})
     }
+
+    firstUpdated(){
+        this.initUI();
+    }
     
     initTabs(){
-        this.menuEl = document.querySelectorAll("#top-menu");
+        this.menuEl = this.renderRoot.querySelectorAll("#top-menu");
         console.log("MENU EL", this.menuEl);
-        this.menuEl.forEach(el=>{
-            addEventListener("click", e=>{
-            el = e.target.closest("[data-menu]");
-            console.log("ELEMENT", el);
-			if(!el 
-				//|| el.classList.contains("active")
-				|| el.classList.contains("disabled"))
-				return
-
-			this.activateMenu(el.getAttribute("data-menu"));
-        })});
 
         let {menu} = this.getStateFromUrl();
         console.log("MENU STATE FROM URL",menu);
 		menu = menu || "home";
 		this.activateMenu(menu);
 	}
+
+    onTopMenuClick(e){
+        let el = e.target.closest("[data-menu]");
+        console.log("ELEMENT", el);
+        if(!el 
+            //|| el.classList.contains("active")
+            || el.classList.contains("disabled"))
+            return
+
+        this.activateMenu(el.getAttribute("data-menu"));
+    }
 
 }
 

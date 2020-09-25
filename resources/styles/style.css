@@ -94,3 +94,7 @@ body.flow-theme-light{
 body.flow-theme-light .file-list{
     --flow-border-color:white;
 }
+.tab-content:not(.active){display:none}
+.top-menus{display:flex;align-items:center;}
+.top-menus a{margin:10px;}
+.top-menus a:not(.disabled){cursor:pointer;}
