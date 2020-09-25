@@ -127,6 +127,7 @@ export class HomePage extends BaseElement{
         </div>
         
         <div for="faq" class="tab-content">
+            <flow-expandable title="MAC OS" icon="fal fa-arrow">eafgsdgsdgsdgsdg</flow-expandable>
             <section column>
                 <div>
                     <h2 red><i xclass="fal fa-exclamation-triangle fa-lg"></i> Mac OS - Known Problems</h2>
