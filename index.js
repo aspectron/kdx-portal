@@ -32,7 +32,7 @@ export class HomePage extends BaseElement{
         return html`
         <flow-app floating-drawer>
         <img slot="header" class="logo" src="resources/images/kdx.svg" />
-        <div slot="header">KDX</div>
+        <div slot="header"><h2>KDX<span class='beta'>BETA</span></h2></div>
         <div slot="header" class="flex"></div>
         <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
             <a data-menu="home" class="active">Home</a>
@@ -43,8 +43,6 @@ export class HomePage extends BaseElement{
             <div for="home" class="tab-content">
                 <section>
                     <div class='intro'>
-                        <h2>KDX</h2>
-
                         <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
                         software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
                         full node software as well as Kasparov components that provide Kaspa BlockDAG API services.</p>
@@ -134,13 +132,12 @@ export class HomePage extends BaseElement{
                 </p>
                 <flow-expandable caption="Mac OS prevents unsigned applications from running">
                     <center>
-                        Mac OS prevents unsigned applications from execution.  When running KDX first time,
-                        you will be prompted with a warning, preventing you from running KDX:
+                        When running KDX for the first time, you may be prompted with a warning, preventing you from running KDX:
                         <br/>
                         <img class="osx-workaround" src="resources/images/osx-warning-dialog.png" />
                     </center>
                     <center>
-                        Go to System Preferences, where you will see a note, allowing you to "Open Anyway"
+                        To resolve this, go to System Preferences, where you will see a note, allowing you to "Open Anyway"
                         <br/>
                         <img class="osx-workaround" style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
                     </center>
@@ -150,8 +147,18 @@ export class HomePage extends BaseElement{
                         <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
                     </center>
                 </flow-expandable>
-                <flow-expandable caption="PostgreSQL modules fails to start on Windows">
-
+                <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
+                    <span slot="title">
+                        PostgreSQL fails to start on Windows. Enabling Advanced options and looking in the PostgreSQL terminal tab
+                        you can see errors related to Locale settings such as:
+                        &nbsp; <br/>
+                        <flow-code fixindent lang="text">
+                            <textarea>
+                                WARNING: 01000: could not determine encoding 
+                                for locale "English_<country>.utf8": codeset is "CPutf8"
+                            </textarea>
+                        </flow-code>
+                    </span>
                     <p>
                         Some OEM computers experience compatibility issue between PostgreSQL database module
                         and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially

@@ -104,3 +104,13 @@ body.flow-theme-light .file-list{
     border-bottom:2px solid #009688;
 }
 .top-menus a.active:after{opacity:1}
+
+.beta {
+    display:inline-block;
+    position:relative;
+    vertical-align: baseline;
+    top:-1.4em;
+    margin-left: 0.1em;
+    font-size:0.4em;
+    color: rgb(185, 64, 64);
+}
