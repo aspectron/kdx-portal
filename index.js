@@ -132,68 +132,65 @@ export class HomePage extends BaseElement{
                 <p>
                     Following section contains information and tips to help you troubleshoot KDX.
                 </p>
-                <flow-expandable caption="Mac OS">
-                    <flow-expandable caption="Mac OS prevents unsigned applications from running">
-                        <center>
-                            Mac OS prevents unsigned applications from execution.  When running KDX first time,
-                            you will be prompted with a warning, preventing you from running KDX:
-                            <br/>
-                            <img class="osx-workaround" src="resources/images/osx-warning-dialog.png" />
-                        </center>
-                        <center>
-                            Go to System Preferences, where you will see a note, allowing you to "Open Anyway"
-                            <br/>
-                            <img class="osx-workaround" style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
-                        </center>
-                        <center>
-                            Alternatively:
-                            <br/>
-                            <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
-                        </center>
-                    </flow-expandable>
-                </flow-expandable>
-                <flow-expandable caption="Windows">
-                    <flow-expandable caption="PostgreSQL modules fails to start">
-
-                        <p>
-                            Some OEM computers experience compatibility issue between PostgreSQL database module
-                            and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
-                            exists across DELL computers with manufacturer pre-installed Windows.
-                        </p>
-                        <p>
-                            <strong red>Symptoms:</strong> Postgres fails to start, giving errors related to Locale settings such as:
-                        &nbsp; <span monospace>WARNING: 01000: could not determine encoding for locale "English_Israel.utf8": codeset is "CPutf8"</span>
-                            
-                        </p>
-                        <p>
-                            Microsoft have introduced an experimental beta option for computer locale settings
-                            that causes a variety of application compatibility issues and on some OEM OS installations
-                            this option is turned on by default, which it should not be.
-                        </p>
-                        <p> If you are experiencing this, you need to apply the following workaround:</span></p>
+                <flow-expandable caption="Mac OS prevents unsigned applications from running">
+                    <center>
+                        Mac OS prevents unsigned applications from execution.  When running KDX first time,
+                        you will be prompted with a warning, preventing you from running KDX:
                         <br/>
-                        <p>
-                            <center>
-                                <h4>Open Control Panel and search for "Languages"</h4>
-                                <img class="workaround" src="resources/images/control-panel.png" />
-                            </center>
-                            <center>
-                                <h4>In the Languages panel select "Administrative Language Settings"</h4>
-                                <img class="workaround" src="resources/images/language-panel.png" />
-                            </center>
-                            <center>
-                                <h4>Select "Change system locale..."</h4>
-                                <img class="workaround" src="resources/images/region-settings.png" />
-                            </center>
-                            <center>
-                                <h4>Make sure that "Beta: Use Unicode UTF-8" checkbox if OFF</h4>
-                                <img class="workaround" src="resources/images/system-locale.png" />
-                            </center>
-                            <center><h4>Reboot your computer.</h4></center>
-                            <hr width="50%"/>
-                        </p>
-                        </flow-expandable>
+                        <img class="osx-workaround" src="resources/images/osx-warning-dialog.png" />
+                    </center>
+                    <center>
+                        Go to System Preferences, where you will see a note, allowing you to "Open Anyway"
+                        <br/>
+                        <img class="osx-workaround" style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
+                    </center>
+                    <center>
+                        Alternatively:
+                        <br/>
+                        <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
+                    </center>
+                </flow-expandable>
+                <flow-expandable caption="PostgreSQL modules fails to start on Windows">
+
+                    <p>
+                        Some OEM computers experience compatibility issue between PostgreSQL database module
+                        and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
+                        exists across DELL computers with manufacturer pre-installed Windows.
+                    </p>
+                    <p>
+                        <strong red>Symptoms:</strong> Postgres fails to start, giving errors related to Locale settings such as:
+                    &nbsp; <span monospace>WARNING: 01000: could not determine encoding for locale "English_Israel.utf8": codeset is "CPutf8"</span>
+                        
+                    </p>
+                    <p>
+                        Microsoft have introduced an experimental beta option for computer locale settings
+                        that causes a variety of application compatibility issues and on some OEM OS installations
+                        this option is turned on by default, which it should not be.
+                    </p>
+                    <p> If you are experiencing this, you need to apply the following workaround:</span></p>
+                    <br/>
+                    <p>
+                        <center>
+                            <h4>Open Control Panel and search for "Languages"</h4>
+                            <img class="workaround" src="resources/images/control-panel.png" />
+                        </center>
+                        <center>
+                            <h4>In the Languages panel select "Administrative Language Settings"</h4>
+                            <img class="workaround" src="resources/images/language-panel.png" />
+                        </center>
+                        <center>
+                            <h4>Select "Change system locale..."</h4>
+                            <img class="workaround" src="resources/images/region-settings.png" />
+                        </center>
+                        <center>
+                            <h4>Make sure that "Beta: Use Unicode UTF-8" checkbox if OFF</h4>
+                            <img class="workaround" src="resources/images/system-locale.png" />
+                        </center>
+                        <center><h4>Reboot your computer.</h4></center>
+                        <hr width="50%"/>
+                    </p>
                     </flow-expandable>
+                
                 </section>
         </div>
     </div>
