@@ -32,7 +32,7 @@ export class HomePage extends BaseElement{
         return html`
         <flow-app floating-drawer>
         <img slot="header" class="logo" src="resources/images/kdx.svg" />
-        <div slot="header"><h2>KDX<span class='beta'>BETA</span></h2></div>
+        <div slot="header"><h2>KDX<!-- span class='beta'>BETA</span --></h2></div>
         <div slot="header" class="flex"></div>
         <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
             <a data-menu="home" class="active">Home</a>
@@ -120,6 +120,39 @@ export class HomePage extends BaseElement{
                         you to rebuild Kaspa software stack directly from GitHub sources.</li>
                         <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
                     </ul>
+                </div>
+            </section>
+            <section column>
+                <div>
+                    <h2>Kaspa Network</h2>
+                    <p>
+                        Kaspa is a <flow-link href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank">PoW</flow-link>-based 
+                        ledger organized in a DAG (Directed Acyclic Graph) of blocks -- a 
+                        <flow-link href="https://docs.kas.pa/kaspa/reference/blockdag" target="_blank"> blockDAG.</flow-link>
+                        A new block gets added to the blockDAG every second and
+                        many blocks are created in parallel.
+                    </p>
+                    <p>
+                        <div class="text">Unlike a blockchain, blocks are not 
+                            <flow-link href="https://en.bitcoin.it/wiki/Orphan_Block" target="_blank">orphaned</flow-link>.
+                                Kaspa merges all blocks into one blockDAG by allowing them to reference multiple parents.
+                        </div>
+                    </p>
+                    <p>
+                        Rather than deciding on which conflicting blocks to discard, 
+                        the consensus protocol governing the blockDAG, known as 
+                        <flow-link href="https://eprint.iacr.org/2018/104.pdf" target="_blank">PHANTOM</flow-link>, 
+                        orders blocks created in parallel. PHANTOM is a generalization 
+                        of Bitcoin’s Nakamoto Consensus.
+                    </p>
+                </div>
+                <div>
+                    DAGViz Phantom visualizer and DAG explorer can be found at <flow-link href="https://alpha.dagviz.com">https://alpha.dagviz.com</flow-link>
+                </div>
+                <div row>
+                    <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
+                    <!-- <iframe id="dagviz" src="https://alpha.dagviz.com?quality=low&track=1" border="0"></iframe> -->
+                    <div flex></div>
                 </div>
             </section>
         </div>

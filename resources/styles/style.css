@@ -114,3 +114,11 @@ body.flow-theme-light .file-list{
     font-size:0.4em;
     color: rgb(185, 64, 64);
 }
+
+#dagviz {
+    width: 85%;
+    height: 400px;
+    margin-bottom: 64px;
+    border: none;
+    border-right: 1px solid #efefef;
+}
