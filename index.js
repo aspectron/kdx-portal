@@ -114,16 +114,6 @@ export class HomePage extends BaseElement{
             </section>
             <section column>
                 <div>
-                    <h2>Developers</h2>
-                    <ul>
-                        <li>KDX includes a miniature build toolchain that allows
-                        you to rebuild Kaspa software stack directly from GitHub sources.</li>
-                        <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
-                    </ul>
-                </div>
-            </section>
-            <section column>
-                <div>
                     <h2>Kaspa Network</h2>
                     <p>
                         Kaspa is a <flow-link href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank">PoW</flow-link>-based 
@@ -147,14 +137,26 @@ export class HomePage extends BaseElement{
                     </p>
                 </div>
                 <div>
-                    DAGViz Phantom visualizer and DAG explorer can be found at <flow-link href="https://alpha.dagviz.com">https://alpha.dagviz.com</flow-link>
+                    DAGViz Phantom visualizer and DAG explorer can be found at <flow-link href="https://alpha.dagviz.com" target="_blank">https://alpha.dagviz.com</flow-link>
                 </div>
                 <div row>
-                    <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
-                    <!-- <iframe id="dagviz" src="https://alpha.dagviz.com?quality=low&track=1" border="0"></iframe> -->
+                    <iframe id="dagviz" src="https://alpha.dagviz.com?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
+                    <!-- <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe> -->
                     <div flex></div>
                 </div>
             </section>
+
+            <section column>
+                <div>
+                    <h2>Developers</h2>
+                    <ul>
+                        <li>KDX includes a miniature build toolchain that allows
+                        you to rebuild Kaspa software stack directly from GitHub sources.</li>
+                        <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
+                    </ul>
+                </div>
+            </section>
+
         </div>
         
         <div for="faq" class="tab-content">
