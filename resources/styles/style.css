@@ -85,6 +85,12 @@ flow-selector.file-list{margin:10px 0px;}
 }
 .download-sha1-link{margin:0px 15px;cursor:pointer;}
 
+body {
+    --flow-app-footer-height: 92px;
+    --flow-app-footer-bg: transparent;
+    --flow-app-footer-color: #000;
+}
+
 body.flow-theme-light{
     --flow-input-box-shadow:10px 10px 30px  rgba(0,0,0,0.05), -10px -10px 30px rgba(0,0,0,0.05);
     --flow-input-bg:white;
@@ -121,4 +127,15 @@ body.flow-theme-light .file-list{
     margin-bottom: 64px;
     border: none;
     border-right: 1px solid #efefef;
+}
+
+.footer-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    border-top: 1px solid #fefefe;
+    position: relative;
+    bottom:0px;
 }

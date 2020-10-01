@@ -1,6 +1,6 @@
 
 import {BaseElement, html, dpc} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
-//import {BaseElement, html, css} from './node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
+//import {BaseElement, html, css, dpc} from './node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
 
 export class HomePage extends BaseElement{
 
@@ -31,211 +31,217 @@ export class HomePage extends BaseElement{
         let files = this.renderFiles();
         return html`
         <flow-app floating-drawer>
-        <img slot="header" class="logo" src="resources/images/kdx.svg" />
-        <div slot="header"><h2>KDX<!-- span class='beta'>BETA</span --></h2></div>
-        <div slot="header" class="flex"></div>
-        <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
-            <a data-menu="home" class="active">Home</a>
-            <a data-menu="faq">FAQ</a>
-        </div>
-        
-        <div slot="main">
-            <div for="home" class="tab-content">
-                <section>
-                    <div class='intro'>
-                        <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
-                        software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
-                        full node software as well as Kasparov components that provide Kaspa BlockDAG API services.</p>
+            <img slot="header" class="logo" src="resources/images/kdx.svg" />
+            <div slot="header"><h2>KDX<!-- span class='beta'>BETA</span --></h2></div>
+            <div slot="header" class="flex"></div>
+            <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
+                <a data-menu="home" class="active">Home</a>
+                <a data-menu="faq">FAQ</a>
+            </div>
 
-                        <p>KDX is not a wallet (although it does include 
-                            Kaspa's command-line wallet demo).</p><!-- ' -->
-                        <p>
-                            Developers looking to integrate with Kaspa can leverage KDX to easily test integrations
-                            with their development environments.  In production, developers are enouraged to setup their own deployment
-                            of the Kaspa software stack by building software from sources or building docker images.
-                        </p>
+            <div slot="footer" class='footer-wrapper'>
+                <div class="footer">
+                    FOOTER...
+                </div>
+            </div>
+            
+            <div slot="main">
+                <div for="home" class="tab-content">
+                    <section>
+                        <div class='intro'>
+                            <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
+                            software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
+                            full node software as well as Kasparov components that provide Kaspa BlockDAG API services.</p>
 
-                        &nbsp;<br/>
+                            <p>KDX is not a wallet (although it does include 
+                                Kaspa's command-line wallet demo).</p><!-- ' -->
+                            <p>
+                                Developers looking to integrate with Kaspa can leverage KDX to easily test integrations
+                                with their development environments.  In production, developers are enouraged to setup their own deployment
+                                of the Kaspa software stack by building software from sources or building docker images.
+                            </p>
 
-                        <div row>
-                            <div flex></div>
-                            <div><img class='screen-shot' src="resources/images/kdx-ui-01.png" /></div>
-                            <div flex></div>
+                            &nbsp;<br/>
+
+                            <div row>
+                                <div flex></div>
+                                <div><img class='screen-shot' src="resources/images/kdx-ui-01.png" /></div>
+                                <div flex></div>
+                            </div>
+                            &nbsp;<br/>
                         </div>
-                        &nbsp;<br/>
-                    </div>
-                    <div flex>&nbsp;</div>
-                    <div class='separator'></div>
-                    <div flex>&nbsp;</div>
-                    <div>
-                        <div><h2>Download KDX</h2></div>
-                        <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
-                        <flow-selector id="file-list" label="Select file" selected="${files.selected}"
-                            class="file-list">${files.contents}</flow-selector>
-                        <flow-btn @click="${this.onDownloadClick}">Download</flow-btn> 
-                        <a class="download-sha1-link" @click="${this.onSha1DownloadClick}">SHA1</a>
-
-                        <div style="text-align: left;">
-                            <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
-                        </div>
-                        
+                        <div flex>&nbsp;</div>
+                        <div class='separator'></div>
+                        <div flex>&nbsp;</div>
                         <div>
-                            <span class="file-link" href=""><div class="icon icon-docker"></div><div>
-                                Docker images can be generated<br/> directly from KDX sources.
-                            </div></span>
+                            <div><h2>Download KDX</h2></div>
+                            <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
+                            <flow-selector id="file-list" label="Select file" selected="${files.selected}"
+                                class="file-list">${files.contents}</flow-selector>
+                            <flow-btn @click="${this.onDownloadClick}">Download</flow-btn> 
+                            <a class="download-sha1-link" @click="${this.onSha1DownloadClick}">SHA1</a>
+
+                            <div style="text-align: left;">
+                                <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
+                            </div>
                             
-                        </div>
-                        
-                        
-                        <div><h2>Sources</h2></div>
-                        <div>
-                            <a class="file-link" href="http://github.com/kaspanet/kdx"><div class="icon icon-github"></div><div>http://github.com/kaspanet/kdx</div></a>
-                        </div>
-
-                        <div><h2>KDX Components</h2></div>
-                        <div>
-                            <div style="margin-left:24px;">
-                                KDX package includes the following components:
+                            <div>
+                                <span class="file-link" href=""><div class="icon icon-docker"></div><div>
+                                    Docker images can be generated<br/> directly from KDX sources.
+                                </div></span>
+                                
                             </div>
-                            <ul class="components">
-                                <li>Kaspad full node daemon</li>
-                                <li>Kasparov API server</li>
-                                <li>Kasparov blockDAG sync server</li>
-                                <li>PostgreSQL (database)</li>
-                                <li>Mosquitto (MQTT broker)</li>
-                            </ul>
-                            <div style="margin-left:24px;">
-                                Please note that KDX is self-contained - 
-                                these components will not be
-                                installed on your computer.
+                            
+                            
+                            <div><h2>Sources</h2></div>
+                            <div>
+                                <a class="file-link" href="http://github.com/kaspanet/kdx"><div class="icon icon-github"></div><div>http://github.com/kaspanet/kdx</div></a>
+                            </div>
+
+                            <div><h2>KDX Components</h2></div>
+                            <div>
+                                <div style="margin-left:24px;">
+                                    KDX package includes the following components:
+                                </div>
+                                <ul class="components">
+                                    <li>Kaspad full node daemon</li>
+                                    <li>Kasparov API server</li>
+                                    <li>Kasparov blockDAG sync server</li>
+                                    <li>PostgreSQL (database)</li>
+                                    <li>Mosquitto (MQTT broker)</li>
+                                </ul>
+                                <div style="margin-left:24px;">
+                                    Please note that KDX is self-contained - 
+                                    these components will not be
+                                    installed on your computer.
+                                </div>
                             </div>
                         </div>
-                    </div>
-            </section>
-            <section column>
-                <div>
-                    <h2>Kaspa Network</h2>
-                    <p>
-                        Kaspa is a <a href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank">PoW</a>-based 
-                        ledger organized in a DAG (Directed Acyclic Graph) of blocks -- a 
-                        <a href="https://docs.kas.pa/kaspa/reference/blockdag" target="_blank"> blockDAG.</a>
-                        A new block gets added to the blockDAG every second and
-                        many blocks are created in parallel.
-                    </p>
-                    <p>
-                        <div class="text">Unlike a blockchain, blocks are not 
-                            <a href="https://en.bitcoin.it/wiki/Orphan_Block" target="_blank">orphaned</a>.
-                                Kaspa merges all blocks into one blockDAG by allowing them to reference multiple parents.
-                        </div>
-                    </p>
-                    <p>
-                        Rather than deciding on which conflicting blocks to discard, 
-                        the consensus protocol governing the blockDAG, known as 
-                        <a href="https://eprint.iacr.org/2018/104.pdf" target="_blank">PHANTOM</a>, 
-                        orders blocks created in parallel. PHANTOM is a generalization 
-                        of Bitcoin’s Nakamoto Consensus.
-                    </p>
-                </div>
-                <div>
-                    DAGViz Phantom visualizer and DAG explorer can be found at <a href="https://alpha.dagviz.com" target="_blank">https://alpha.dagviz.com</a>
-                </div>
-                <div row>
-                    <iframe id="dagviz" src="https://alpha.dagviz.com?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
-                    <!-- <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe> -->
-                    <div flex></div>
-                </div>
-            </section>
-
-            <section column>
-                <div>
-                    <h2>Developers</h2>
-                    <ul>
-                        <li>KDX includes a miniature build toolchain that allows
-                        you to rebuild Kaspa software stack directly from GitHub sources.</li>
-                        <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
-                    </ul>
-                </div>
-            </section>
-
-        </div>
-        
-        <div for="faq" class="tab-content">
-            <section column>
-                <h3>Frequently Asked Questions</h3>
-                <p>
-                    Following section contains information and tips to help you troubleshoot KDX.
-                </p>
-                <flow-expandable caption="Mac OS prevents unsigned applications from running">
-                    <center>
-                        When running KDX for the first time, you may be prompted with a warning, preventing you from running KDX:
-                        <br/>
-                        <img class="osx-workaround" src="resources/images/osx-warning-dialog.png" />
-                    </center>
-                    <center>
-                        To resolve this, go to System Preferences, where you will see a note, allowing you to "Open Anyway"
-                        <br/>
-                        <img class="osx-workaround" style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
-                    </center>
-                    <center>
-                        Alternatively:
-                        <br/>
-                        <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
-                    </center>
-                </flow-expandable>
-                <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
-                    <span slot="title">
-                        PostgreSQL fails to start on Windows. Enabling Advanced options and looking in the PostgreSQL terminal tab
-                        you can see errors related to Locale settings such as:
-                        &nbsp; <br/>
-                        <flow-code fixindent lang="text">
-                            <textarea>
-                                WARNING: 01000: could not determine encoding 
-                                for locale "English_<country>.utf8": codeset is "CPutf8"
-                            </textarea>
-                        </flow-code>
-                    </span>
-                    <p>
-                        Some OEM computers experience compatibility issue between PostgreSQL database module
-                        and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
-                        exists across DELL computers with manufacturer pre-installed Windows.
-                    </p>
-                    <p>
-                        <strong red>Symptoms:</strong> Postgres fails to start, giving errors related to Locale settings such as:
-                    &nbsp; <span monospace>WARNING: 01000: could not determine encoding for locale "English_Israel.utf8": codeset is "CPutf8"</span>
-                        
-                    </p>
-                    <p>
-                        Microsoft have introduced an experimental beta option for computer locale settings
-                        that causes a variety of application compatibility issues and on some OEM OS installations
-                        this option is turned on by default, which it should not be.
-                    </p>
-                    <p> If you are experiencing this, you need to apply the following workaround:</span></p>
-                    <br/>
-                    <p>
-                        <center>
-                            <h4>Open Control Panel and search for "Languages"</h4>
-                            <img class="workaround" src="resources/images/control-panel.png" />
-                        </center>
-                        <center>
-                            <h4>In the Languages panel select "Administrative Language Settings"</h4>
-                            <img class="workaround" src="resources/images/language-panel.png" />
-                        </center>
-                        <center>
-                            <h4>Select "Change system locale..."</h4>
-                            <img class="workaround" src="resources/images/region-settings.png" />
-                        </center>
-                        <center>
-                            <h4>Make sure that "Beta: Use Unicode UTF-8" checkbox if OFF</h4>
-                            <img class="workaround" src="resources/images/system-locale.png" />
-                        </center>
-                        <center><h4>Reboot your computer.</h4></center>
-                        <hr width="50%"/>
-                    </p>
-                    </flow-expandable>
-                
                 </section>
-        </div>
-    </div>
+                <section column>
+                    <div>
+                        <h2>Kaspa Network</h2>
+                        <p>
+                            Kaspa is a <a href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank">PoW</a>-based 
+                            ledger organized in a DAG (Directed Acyclic Graph) of blocks -- a 
+                            <a href="https://docs.kas.pa/kaspa/reference/blockdag" target="_blank"> blockDAG.</a>
+                            A new block gets added to the blockDAG every second and
+                            many blocks are created in parallel.
+                        </p>
+                        <p>
+                            <div class="text">Unlike a blockchain, blocks are not 
+                                <a href="https://en.bitcoin.it/wiki/Orphan_Block" target="_blank">orphaned</a>.
+                                    Kaspa merges all blocks into one blockDAG by allowing them to reference multiple parents.
+                            </div>
+                        </p>
+                        <p>
+                            Rather than deciding on which conflicting blocks to discard, 
+                            the consensus protocol governing the blockDAG, known as 
+                            <a href="https://eprint.iacr.org/2018/104.pdf" target="_blank">PHANTOM</a>, 
+                            orders blocks created in parallel. PHANTOM is a generalization 
+                            of Bitcoin’s Nakamoto Consensus.
+                        </p>
+                    </div>
+                    <div>
+                        DAGViz Phantom visualizer and DAG explorer can be found at <a href="https://alpha.dagviz.com" target="_blank">https://alpha.dagviz.com</a>
+                    </div>
+                    <div row>
+                        <!-- <iframe id="dagviz" src="https://alpha.dagviz.com?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe> -->
+                        <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
+                        <div flex></div>
+                    </div>
+                </section>
+
+                <section column>
+                    <div>
+                        <h2>Developers</h2>
+                        <ul>
+                            <li>KDX includes a miniature build toolchain that allows
+                            you to rebuild Kaspa software stack directly from GitHub sources.</li>
+                            <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+            
+            <div for="faq" class="tab-content">
+                <section column>
+                    <h3>Frequently Asked Questions</h3>
+                    <p>
+                        Following section contains information and tips to help you troubleshoot KDX.
+                    </p>
+                    <flow-expandable caption="Mac OS prevents unsigned applications from running">
+                        <center>
+                            When running KDX for the first time, you may be prompted with a warning, preventing you from running KDX:
+                            <br/>
+                            <img class="osx-workaround" src="resources/images/osx-warning-dialog.png" />
+                        </center>
+                        <center>
+                            To resolve this, go to System Preferences, where you will see a note, allowing you to "Open Anyway"
+                            <br/>
+                            <img class="osx-workaround" style="min-width:560px;" src="resources/images/osx-settings-warning.png" />
+                        </center>
+                        <center>
+                            Alternatively:
+                            <br/>
+                            <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
+                        </center>
+                    </flow-expandable>
+                    <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
+                        <span slot="title">
+                            PostgreSQL fails to start on Windows. Enabling Advanced options and looking in the PostgreSQL terminal tab
+                            you can see errors related to Locale settings such as:
+                            &nbsp; <br/>
+                            <flow-code fixindent lang="text">
+                                <textarea>
+                                    WARNING: 01000: could not determine encoding 
+                                    for locale "English_<country>.utf8": codeset is "CPutf8"
+                                </textarea>
+                            </flow-code>
+                        </span>
+                        <p>
+                            Some OEM computers experience compatibility issue between PostgreSQL database module
+                            and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
+                            exists across DELL computers with manufacturer pre-installed Windows.
+                        </p>
+                        <p>
+                            <strong red>Symptoms:</strong> Postgres fails to start, giving errors related to Locale settings such as:
+                        &nbsp; <span monospace>WARNING: 01000: could not determine encoding for locale "English_Israel.utf8": codeset is "CPutf8"</span>
+                            
+                        </p>
+                        <p>
+                            Microsoft have introduced an experimental beta option for computer locale settings
+                            that causes a variety of application compatibility issues and on some OEM OS installations
+                            this option is turned on by default, which it should not be.
+                        </p>
+                        <p> If you are experiencing this, you need to apply the following workaround:</span></p>
+                        <br/>
+                        <p>
+                            <center>
+                                <h4>Open Control Panel and search for "Languages"</h4>
+                                <img class="workaround" src="resources/images/control-panel.png" />
+                            </center>
+                            <center>
+                                <h4>In the Languages panel select "Administrative Language Settings"</h4>
+                                <img class="workaround" src="resources/images/language-panel.png" />
+                            </center>
+                            <center>
+                                <h4>Select "Change system locale..."</h4>
+                                <img class="workaround" src="resources/images/region-settings.png" />
+                            </center>
+                            <center>
+                                <h4>Make sure that "Beta: Use Unicode UTF-8" checkbox if OFF</h4>
+                                <img class="workaround" src="resources/images/system-locale.png" />
+                            </center>
+                            <center><h4>Reboot your computer.</h4></center>
+                            <hr width="50%"/>
+                        </p>
+                        </flow-expandable>
+                    
+                    </section>
+                </div>
+            </div>
         </flow-app>
         `;
     }
