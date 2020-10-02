@@ -253,6 +253,7 @@ export class HomePage extends BaseElement{
             'kdx-v1.0.0-windows-x64.exe' : 'installer',
             'kdx-v1.0.0-windows-x64.zip' : 'portable',
             'kdx-v1.0.3-darwin-x64.dmg' : 'DMG',
+            'kdx-v1.2.0-darwin-x64.zip' : 'portable',
             '-kdx-1.0.3-darwin-x64.zip' : 'portable',
             '-kdx-1.0.0-linux-x64.zip' : 'portable'
         }).map(([file, descr]) => {
