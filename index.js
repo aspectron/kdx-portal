@@ -306,7 +306,7 @@ export class HomePage extends BaseElement{
     }
 
     onDownloadClick(){
-        let file = this.renderRoot.querySelector("#file-list").selected;
+        let file = this.renderRoot.querySelector("#file-list").value;
         if(!file)
             return
         this.download(file, 'downloads/'+file);
