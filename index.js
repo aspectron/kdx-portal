@@ -28,6 +28,10 @@ export class HomePage extends BaseElement{
     }
 
     render(){
+
+        const dagvizUrl = /^localhost/.test(window.location.host) ? 'http://localhost:8686' : 'https://alpha.dagviz.com';
+        const iframeSrc = `${dagvizUrl}?noux=true&quality=high&track=1&k=0.3&displace=0.3`;
+
         let files = this.renderFiles();
         return html`
         <flow-app floating-drawer>
@@ -146,8 +150,7 @@ export class HomePage extends BaseElement{
                         DAGViz Phantom visualizer and DAG explorer can be found at <a href="https://alpha.dagviz.com" target="_blank">https://alpha.dagviz.com</a>
                     </div>
                     <div row>
-                        <!-- <iframe id="dagviz" src="https://alpha.dagviz.com?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe> -->
-                        <iframe id="dagviz" src="http://localhost:8686?noux=true&quality=high&track=1&k=0.3&displace=0.3" border="0"></iframe>
+                        <iframe id="dagviz" src="${iframeSrc}" border="0"></iframe>
                         <div flex></div>
                     </div>
                 </section>
