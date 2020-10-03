@@ -118,7 +118,13 @@ body.flow-theme-light .file-list{
 #dagviz {
     width: 85%;
     height: 400px;
-    margin-bottom: 64px;
     border: none;
     border-right: 1px solid #efefef;
+}
+
+.iframe-wrapper {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
 }
