@@ -66,7 +66,7 @@ position:relative;}*/
 li{padding:4px;}
 .components li{padding:3px;}
 .sha{margin-left:8px;padding:6px 6px 6px 8px;border-left:1px solid #eee;}
-.screen-shot{width:580px;height:auto;border:2px solid #eee;}
+.screen-shot{width:90%;height:auto;border:2px solid #eee;}
 .descr{min-width:100px;}
 .disable{opacity:0.4;pointer-events:none;}
 [notice]{margin:8px 0px 8px 48px;}
@@ -84,6 +84,12 @@ flow-selector.file-list{margin:10px 0px;}
     flow-selector.file-list{min-width:390px;}
 }
 .download-sha1-link{margin:0px 15px;cursor:pointer;}
+
+body {
+    --flow-app-footer-height: 92px;
+    --flow-app-footer-bg: transparent;
+    --flow-app-footer-color: #000;
+}
 
 body.flow-theme-light{
     --flow-input-box-shadow:10px 10px 30px  rgba(0,0,0,0.05), -10px -10px 30px rgba(0,0,0,0.05);
@@ -121,10 +127,21 @@ body.flow-theme-light .file-list{
     border: none;
     border-right: 1px solid #efefef;
 }
-
+/*
 .iframe-wrapper {
     margin-top: 64px;
     margin-bottom: 64px;
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
+}
+*/
+.footer-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    border-top: 1px solid #fefefe;
+    position: relative;
+    bottom:0px;
 }
