@@ -144,4 +144,9 @@ body.flow-theme-light .file-list{
     border-top: 1px solid #fefefe;
     position: relative;
     bottom:0px;
+
+    margin-top: 32px;
+    padding-4px;
+    border-top: 1px solid #eee;
+    text-align: center;
 }

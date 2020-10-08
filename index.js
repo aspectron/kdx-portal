@@ -45,7 +45,7 @@ export class HomePage extends BaseElement{
 
             <div slot="footer" class='footer-wrapper'>
                 <div class="footer">
-                    FOOTER...
+                    Copyright (c) KDX &amp; Kaspa Developers.  All Rights Reserved.
                 </div>
             </div>
             
@@ -78,6 +78,9 @@ export class HomePage extends BaseElement{
                         <div class='separator'></div>
                         <div flex>&nbsp;</div>
                         <div>
+                            <div>THIS SITE IS CURRENTLY UNDER CONSTRUCTION
+                                DOWNLOADS WILL BE AVAILABLE IN THE COMING DAYS
+                            </div>
                             <div><h2>Download KDX</h2></div>
                             <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
                             <flow-selector id="file-list" label="Select file" selected="${files.selected}"
@@ -240,8 +243,24 @@ export class HomePage extends BaseElement{
                             <center><h4>Reboot your computer.</h4></center>
                             <hr width="50%"/>
                         </p>
-                        </flow-expandable>
-                    
+                    </flow-expandable>
+                    <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
+                        <span slot="title">
+                            PostgreSQL fails to start (development environment) with a similar message:
+                            <flow-code fixindent lang="text">
+                                <textarea>
+                                    Exiting...2020-10-07 20:48:00.165 [INF] KVSD: Version 0.7.2
+                                    2020-10-07 20:48:00.172 [CRT] KVSD: Exiting: Fatal error in goroutine 'main':
+                                    Error connecting to database: Database is not current (version 0). 
+                                    Please migrate the database by running the server with --migrate flag and then run it again
+                                </textarea>
+                            </flow-code>
+                        </span>
+                        <p>
+                            This occurs when Kasparov upgrades its database (PostgreSQL database schema).
+                            You can upgrade the database manually by running the <flow-code>migrate</flow-code> command from KDX Console.
+                        </p>
+                    </flow-expandable>
                     </section>
                 </div>
             </div>
