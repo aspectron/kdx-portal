@@ -41,9 +41,9 @@ a:hover{filter:brightness(50%);}
     background-repeat:no-repeat;background-size:contain;margin-bottom:-10px;
     margin-right:14px;
 }
-.icon-github{background-image:url('resources/images/github.svg') }
+.icon-github{background-image:url('/resources/images/github.svg') }
 .icon-docker{
-    background-image:url('resources/images/docker.svg');
+    background-image:url('/resources/images/docker.svg');
     width:32px; height:32px;
 }
 section{padding:0px 62px 0px 62px;display:flex;flex-direction:row;}
@@ -150,7 +150,9 @@ body.flow-theme-light .file-list{
     bottom:0px;
 
     margin-top: 32px;
-    padding: 4px;
+    padding: 16px 4px;
     border-top: 1px solid #eee;
     text-align: center;
+    color:#333;
+
 }

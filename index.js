@@ -45,7 +45,7 @@ export class HomePage extends BaseElement{
 
             <div slot="footer" class='footer-wrapper'>
                 <div class="footer">
-                    Copyright (c) KDX &amp; Kaspa Developers.  All Rights Reserved.
+                    Copyright (c) ${new Date().getFullYear()} KDX &amp; Kaspa Developers.  All Rights Reserved.
                 </div>
             </div>
             
