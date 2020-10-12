@@ -146,6 +146,7 @@ export class HomePage extends BaseElement{
                                     these components will not be
                                     installed on your computer.
                                 </div>
+                                <div>&nbsp;<br/>&nbsp;</div>
                             </div>
                         </div>
                 </section>
