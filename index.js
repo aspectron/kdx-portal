@@ -1,5 +1,6 @@
 
 import {BaseElement, html, dpc} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
+import {downloads} from './downloads.js';
 //import {BaseElement, html, css, dpc} from './node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
 
 export class HomePage extends BaseElement{
@@ -288,10 +289,10 @@ export class HomePage extends BaseElement{
         let selected = '';
         let contents = Object.entries({
             'kdx-v1.2.0-windows-x64.exe' : 'installer',
-            'kdx-dev-v1.2.0-windows-x64.exe' : 'Developer Edition',
+            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
             'kdx-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-dev-v1.2.0-windows-x64.zip' : 'Developer Edition',
-            'kdx-v1.2.0-darwin-x64.dmg' : 'Developer Edition',
+            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
+            'kdx-v1.2.0-darwin-x64.dmg' : 'DMG',
             'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
@@ -309,6 +310,10 @@ export class HomePage extends BaseElement{
             let [app,suffix] = file.split('-v');
             let [version,os,platform] = suffix.split('-');
             // let [app,version,os,platform] = file.split('-');
+            let size = '';
+            if(downloads[file])
+                size = downloads[file].size.toFileSize(true);
+
             if(!selected && os == userOS)
                 selected = file;
             return html`
@@ -321,7 +326,9 @@ export class HomePage extends BaseElement{
                 data-text="${file} ${descr}"
                 >
                 ${
-                    !/-dev-/.test(file) ? html`<div style="font-size:0.85em;color:#666;">STANDARD</div>` : html`<div style="font-size:0.85em;color:#666;">DEV</div>`
+                    !/-dev-/.test(file) ? 
+                html`<div style="color:#666;"><div style="font-size:0.62em;"><b>STANDARD</b></div><div style="font-size:0.62em;">${descr.toUpperCase()}</div><div style="font-size:0.70em;">${size}</div></div>` : 
+                html`<div style="color:#666;"><div  style="font-size:0.62em;"><b>DEV</b></div><div style="font-size:0.62em;">${descr.toUpperCase()}</div><div style="font-size:0.70em;"><nobr>${size}</div></div>`
                 }
                 
                 
@@ -428,3 +435,24 @@ export class HomePage extends BaseElement{
 
 HomePage.define("home-page");
 
+
+if(!Number.prototype.toFileSize) {
+    Object.defineProperty(Number.prototype, 'toFileSize', {
+       value: function(a, asNumber){
+           var b,c,d;
+           var r = (
+               a=a?[1e3,'k','B']:[1024,'K','iB'],
+               b=Math,
+               c=b.log,
+               d=c(this)/c(a[0])|0,this/b.pow(a[0],d)
+           ).toFixed(2)
+  
+           if(!asNumber){
+               r += ' '+(d?(a[1]+'MGTPEZY')[--d]+a[2]:'Bytes');
+           }
+           return r;
+       },
+       writable:false,
+       enumerable:false
+    });
+}

@@ -1,0 +1,14 @@
+const { fstat } = require("fs");
+
+const E = new Emanator(__dirname, { type : 'UTIL' });
+
+let downloads = path.join(E.appFolder,'downloads');
+let files = fs.readdirSync(downloads);
+
+let entries = { }
+files.forEach((file) => {
+    const { size } = fs.lstatSync(path.join(downloads,file));
+    entries[file] = { size };
+});
+
+fs.writeFileSync('downloads.js', `export const downloads = ${JSON.stringify(entries,null,'\t')};`);
