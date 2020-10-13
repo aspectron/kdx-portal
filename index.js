@@ -102,15 +102,28 @@ export class HomePage extends BaseElement{
                         <div class='separator'></div>
                         <div flex>&nbsp;</div>
                         <div>
-                            <div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;">THIS SITE IS CURRENTLY UNDER CONSTRUCTION
-                                DOWNLOADS WILL BE AVAILABLE IN THE COMING DAYS
+                            <div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;"><center><b>UNDER CONSTRUCTION</b><br/>
+                                DOWNLOADS WILL BE AVAILABLE<br/>IN THE COMING DAYS</center>
                             </div>
                             <div><h2>Download KDX</h2></div>
                             <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
-                            <flow-selector id="file-list" label="Select file" selected="${files.selected}"
+                            <flow-selector id="file-list" label="Select file" hidefilter selected="${files.selected}"
                                 class="file-list">${files.contents}</flow-selector>
                             <flow-btn @click="${this.onDownloadClick}">Download</flow-btn> 
                             <a class="download-sha1-link" @click="${this.onSha1DownloadClick}">SHA1</a>
+
+                            <div style="text-align: left;">
+                                <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
+                            </div>
+
+                            <div xstyle="padding:16px;border:1px solid #ccc;border-radius:10px;">
+                                KDX is available in two editions:<br/>
+                                <ul>
+                                <li><b>STANDARD</b> - Full Kaspa Stack</li>
+                                <li><b>DEV</b> - includes kExplorer, DAGViz and kMetrics test applications.</li>
+                                </ul>
+                                
+                            </div>
 
                             <div style="text-align: left;">
                                 <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
@@ -274,12 +287,12 @@ export class HomePage extends BaseElement{
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-dev-v1.0.0-windows-x64.exe' : 'Developer Edition',
-            'kdx-v1.0.0-windows-x64.exe' : 'installer',
-            'kdx-dev-v1.2.0-windows-x64.zip' : 'Developer Edition',
+            'kdx-v1.2.0-windows-x64.exe' : 'installer',
+            'kdx-dev-v1.2.0-windows-x64.exe' : 'Developer Edition',
             'kdx-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
+            'kdx-dev-v1.2.0-windows-x64.zip' : 'Developer Edition',
             'kdx-v1.2.0-darwin-x64.dmg' : 'Developer Edition',
+            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
             '-kdx-v1.2.0-linux-x64.zip' : 'portable'
@@ -289,7 +302,10 @@ export class HomePage extends BaseElement{
                 file = file.substring(1);
                 disable = 'disable';
             }
+/*
 
+
+*/
             let [app,suffix] = file.split('-v');
             let [version,os,platform] = suffix.split('-');
             // let [app,version,os,platform] = file.split('-');
@@ -299,11 +315,17 @@ export class HomePage extends BaseElement{
             <flow-download-badge class="dl-wrapper ${disable} menu-item"
                 file="downloads/${file}"
                 icon="resources/images/${os}.svg"
-                title="${file}"
-                descr="${descr}"
                 value="${file}"
+                title="${file}"
+                xdescr="${descr}"
                 data-text="${file} ${descr}"
-                ></flow-download-badge>
+                >
+                ${
+                    !/-dev-/.test(file) ? html`<div style="font-size:0.85em;">STANDARD</div>` : html`<div style="font-size:0.85em;">DEV</div>`
+                }
+                
+                
+            </flow-download-badge>
             `;
         });
         return {contents, selected}
