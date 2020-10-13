@@ -274,12 +274,15 @@ export class HomePage extends BaseElement{
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
+            'kdx-dev-v1.0.0-windows-x64.exe' : 'Developer Edition',
             'kdx-v1.0.0-windows-x64.exe' : 'installer',
-            'kdx-v1.0.0-windows-x64.zip' : 'portable',
-            'kdx-v1.0.3-darwin-x64.dmg' : 'DMG',
-            'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
-            '-kdx-1.0.3-darwin-x64.zip' : 'portable',
-            '-kdx-1.0.0-linux-x64.zip' : 'portable'
+            'kdx-dev-v1.2.0-windows-x64.zip' : 'Developer Edition',
+            'kdx-v1.2.0-windows-x64.zip' : 'portable',
+            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
+            'kdx-v1.2.0-darwin-x64.dmg' : 'Developer Edition',
+            //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
+            //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
+            '-kdx-v1.2.0-linux-x64.zip' : 'portable'
         }).map(([file, descr]) => {
             let disable = '';
             if(file.charAt(0) == '-') {
@@ -287,7 +290,9 @@ export class HomePage extends BaseElement{
                 disable = 'disable';
             }
 
-            let [app,version,os,platform] = file.split('-');
+            let [app,suffix] = file.split('-v');
+            let [version,os,platform] = suffix.split('-');
+            // let [app,version,os,platform] = file.split('-');
             if(!selected && os == userOS)
                 selected = file;
             return html`

@@ -156,3 +156,7 @@ body.flow-theme-light .file-list{
     color:#333;
 
 }
+
+body {
+    --flow-download-badge-title-min-width: 250px;
+}
