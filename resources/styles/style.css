@@ -42,6 +42,8 @@ a:hover{filter:brightness(50%);}
     margin-right:14px;
 }
 .icon-github{background-image:url('/resources/images/github.svg') }
+.icon-discord{background-image:url('/resources/images/discord.svg') }
+.icon-book{background-image:url('/resources/images/book.svg') }
 .icon-docker{
     background-image:url('/resources/images/docker.svg');
     width:32px; height:32px;
