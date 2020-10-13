@@ -117,12 +117,13 @@ export class HomePage extends BaseElement{
                                 <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
                             </div>
 
-                            <div xstyle="padding:16px;border:1px solid #ccc;border-radius:10px;">
+                            <div style="max-width:400px;">
                                 KDX is available in two editions:<br/>
                                 <ul>
                                 <li><b>STANDARD</b> - Full Kaspa Stack</li>
-                                <li><b>DEV</b> - includes kExplorer, DAGViz and kMetrics test applications.</li>
+                                <li><b>DEV</b> - includes kExplorer, DAGViz and kMetrics test applications. This build is intended for developes and is heavier on the system.</li>
                                 </ul>
+                                Current release: &nbsp; KDX 1.2.0 &nbsp; Kaspa 0.7.2-dev<br/>
                                 
                             </div>
 
@@ -161,8 +162,13 @@ export class HomePage extends BaseElement{
                                     these components will not be
                                     installed on your computer.
                                 </div>
-                                <div>&nbsp;<br/>&nbsp;</div>
                             </div>
+                            <div><h2>Kaspa Resources</h2></div>
+                            <div>
+                                <a class="file-link" href="https://discord.gg/vMT39xB"><div class="icon icon-discord"></div><div>Discord Chat</div></a>
+                                <a class="file-link" href="https://docs.kas.pa/kaspa/about-kaspa/get-started"><div class="icon icon-book"></div><div>Documentation</div></a>
+                            </div>
+
                         </div>
                 </section>
                 <section column>
