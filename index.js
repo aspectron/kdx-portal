@@ -139,7 +139,8 @@ export class HomePage extends BaseElement{
                             
                             <div><h2>Sources</h2></div>
                             <div>
-                                <a class="file-link" href="http://github.com/aspectron/kdx"><div class="icon icon-github"></div><div>http://github.com/aspectron/kdx</div></a>
+                                <a class="file-link" href="http://github.com/kaspanet"><div class="icon icon-github"></div><div><span style="color:black;">Kaspa -</span> http://github.com/kaspanet</div></a>
+                                <a class="file-link" href="http://github.com/aspectron/kdx"><div class="icon icon-github"></div><div><span style="color:black;">KDX -</span>http://github.com/aspectron/kdx</div></a>
                             </div>
 
                             <div><h2>KDX Components</h2></div>
@@ -212,8 +213,7 @@ export class HomePage extends BaseElement{
                     <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
                         <span slot="title">
                             PostgreSQL fails to start on Windows. Enabling Advanced options and looking in the PostgreSQL terminal tab
-                            you can see errors related to Locale settings such as:
-                            &nbsp; <br/>
+                            you can see errors related to Locale settings such as:<br/>
                             <flow-code fixindent lang="text">
                                 <textarea>
                                     WARNING: 01000: could not determine encoding 
@@ -261,7 +261,7 @@ export class HomePage extends BaseElement{
                     </flow-expandable>
                     <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
                         <span slot="title">
-                            PostgreSQL fails to start (development environment) with a similar message:
+                            PostgreSQL fails to start (development environment) with a similar message:<br/>
                             <flow-code fixindent lang="text">
                                 <textarea>
                                     Exiting...2020-10-07 20:48:00.165 [INF] KVSD: Version 0.7.2
@@ -321,7 +321,7 @@ export class HomePage extends BaseElement{
                 data-text="${file} ${descr}"
                 >
                 ${
-                    !/-dev-/.test(file) ? html`<div style="font-size:0.85em;">STANDARD</div>` : html`<div style="font-size:0.85em;">DEV</div>`
+                    !/-dev-/.test(file) ? html`<div style="font-size:0.85em;color:#666;">STANDARD</div>` : html`<div style="font-size:0.85em;color:#666;">DEV</div>`
                 }
                 
                 
