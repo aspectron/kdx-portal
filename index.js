@@ -103,9 +103,9 @@ export class HomePage extends BaseElement{
                         <div class='separator'></div>
                         <div flex>&nbsp;</div>
                         <div>
-                            <div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;"><center><b>UNDER CONSTRUCTION</b><br/>
+                            <!-- div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;"><center><b>UNDER CONSTRUCTION</b><br/>
                                 DOWNLOADS WILL BE AVAILABLE<br/>IN THE COMING DAYS</center>
-                            </div>
+                            </div -->
                             <div><h2>Download KDX</h2></div>
                             <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
                             <flow-selector id="file-list" label="Select file" hidefilter selected="${files.selected}"
