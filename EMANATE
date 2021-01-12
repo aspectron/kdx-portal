@@ -3,6 +3,8 @@ const { fstat } = require("fs");
 const E = new Emanator(__dirname, { type : 'UTIL' });
 
 let downloads = path.join(E.appFolder,'downloads');
+if(!fs.existsSync(downloads))
+    await mkdirp(downloads);
 let files = fs.readdirSync(downloads);
 
 let entries = { }
