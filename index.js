@@ -1,9 +1,9 @@
 
-import {BaseElement, html, dpc} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
+import {BaseElement, FlowApp, html, dpc} from 'https://cdn.aspectron.com/latest/flow-ux-static/flow-ux/flow-ux.js';
 import {downloads} from './downloads.js';
-//import {BaseElement, html, css, dpc} from './node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
+//import {BaseElement, FlowApp, html, css, dpc} from './node_modules/@aspectron/flow-ux/dist/latest/flow-ux-static/flow-ux/flow-ux.js';
 
-export class HomePage extends BaseElement{
+export class KdxPortal extends FlowApp {
 
     constructor(){
 		super();
@@ -20,13 +20,13 @@ export class HomePage extends BaseElement{
 	}
 
 	initUI(){
-		this.bodyEl = document.body;
+//		this.bodyEl = document.body;
 		this.initTabs();
 	}
 
-    createRenderRoot(){
-        return this;
-    }
+    // createRenderRoot(){
+    //     return this;
+    // }
 
     render(){
 
@@ -35,7 +35,7 @@ export class HomePage extends BaseElement{
 
         let files = this.renderFiles();
         return html`
-        <flow-app floating-drawer>
+        <flow-app-layout floating-drawer>
             <img slot="header" class="logo" src="resources/images/kdx.svg" />
             <div slot="header"><h2>KDX<!-- span class='beta'>BETA</span --></h2></div>
             <div slot="header" class="flex"></div>
@@ -286,7 +286,7 @@ export class HomePage extends BaseElement{
                     </section>
                 </div>
             </div>
-        </flow-app>
+        </flow-app-layout>
         `;
     }
 
@@ -414,6 +414,7 @@ export class HomePage extends BaseElement{
 
     firstUpdated(){
         this.initUI();
+        super.firstUpdated();
     }
     
     initTabs(){
@@ -439,7 +440,7 @@ export class HomePage extends BaseElement{
 
 }
 
-HomePage.define("home-page");
+KdxPortal.define("kdx-portal");
 
 
 if(!Number.prototype.toFileSize) {
