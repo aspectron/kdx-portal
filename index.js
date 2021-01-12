@@ -294,12 +294,12 @@ export class HomePage extends BaseElement{
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v1.2.0-windows-x64.exe' : 'installer',
-            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
-            'kdx-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
+            'kdx-v1.4.0-windows-x64.exe' : 'installer',
+//            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
+//            'kdx-v1.2.0-windows-x64.zip' : 'portable',
+//            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
             'kdx-v1.2.0-darwin-x64.dmg' : 'DMG',
-            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
+//            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
             '-kdx-v1.2.0-linux-x64.zip' : 'portable'
