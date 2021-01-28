@@ -41,6 +41,7 @@ a:hover{filter:brightness(50%);}
     background-repeat:no-repeat;background-size:contain;margin-bottom:-10px;
     margin-right:14px;
 }
+.icon-faucet{background-image:url('/resources/images/faucet.svg') }
 .icon-github{background-image:url('/resources/images/github.svg') }
 .icon-discord{background-image:url('/resources/images/discord.svg') }
 .icon-book{background-image:url('/resources/images/book.svg') }
@@ -68,7 +69,7 @@ position:relative;}*/
 li{padding:4px;}
 .components li{padding:3px;}
 .sha{margin-left:8px;padding:6px 6px 6px 8px;border-left:1px solid #eee;}
-.screen-shot{width:90%;height:auto;border:2px solid #eee;}
+.screen-shot{width:90%;height:auto; /*border:2px solid #eee;*/ }
 .descr{min-width:100px;}
 .disable{opacity:0.4;pointer-events:none;}
 [notice]{margin:8px 0px 8px 48px;}

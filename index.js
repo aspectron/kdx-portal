@@ -55,16 +55,8 @@ export class KdxPortal extends FlowApp {
                     <section>
                         <div class='intro'>
                             <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
-                            software stack when running in a desktop operating system environment.  KDX allows you to run Kaspa 
-                            full node software as well as Kasparov components that provide Kaspa BlockDAG API services.</p>
+                            full-node software and the Kaspa Wallet when running in a desktop operating system environment.</p>
 
-                            <p>KDX is not a wallet (although it does include 
-                                Kaspa's command-line wallet demo).</p><!-- ' -->
-                            <p>
-                                Developers looking to integrate with Kaspa can leverage KDX to easily test integrations
-                                with their development environments.  In production, developers are enouraged to setup their own deployment
-                                of the Kaspa software stack by building software from sources or building docker images.
-                            </p>
 
                             &nbsp;<br/>
 
@@ -113,17 +105,11 @@ export class KdxPortal extends FlowApp {
                             <flow-btn @click="${this.onDownloadClick}">Download</flow-btn> 
                             <a class="download-sha1-link" @click="${this.onSha1DownloadClick}">SHA1</a>
 
-                            <div style="text-align: left;">
-                                <hr style="width: 30%; margin:24px 0px 14px 4px;"/>
+                            <div style="text-align: left; margin:24px;">
                             </div>
 
                             <div style="max-width:400px;">
-                                KDX is available in two editions:<br/>
-                                <ul>
-                                <li><b>STANDARD</b> - Full Kaspa Stack</li>
-                                <li><b>DEV</b> - includes kExplorer, DAGViz and kMetrics test applications. This build is intended for developes and is heavier on the system.</li>
-                                </ul>
-                                Current release: &nbsp; KDX 1.2.0 &nbsp; Kaspa 0.7.2-dev<br/>
+                                Current release: &nbsp; KDX 2.0.0 &nbsp; Kaspa 0.8.6-dev<br/>
                                 
                             </div>
 
@@ -152,26 +138,19 @@ export class KdxPortal extends FlowApp {
                                 </div>
                                 <ul class="components">
                                     <li>Kaspad full node daemon</li>
-                                    <li>Kasparov API server</li>
-                                    <li>Kasparov blockDAG sync server</li>
-                                    <li>PostgreSQL (database)</li>
-                                    <li>Mosquitto (MQTT broker)</li>
+                                    <li>Kaspa testnet SHA256 miner</li>
                                 </ul>
-                                <div style="margin-left:24px;">
-                                    Please note that KDX is self-contained - 
-                                    these components will not be
-                                    installed on your computer.
-                                </div>
                             </div>
                             <div><h2>Kaspa Resources</h2></div>
                             <div>
+                                <a class="file-link" href="https://faucet.kdx.app" target="_blank"><div class="icon icon-faucet"></div><div>Kaspa Faucet</div></a>
                                 <a class="file-link" href="https://discord.gg/vMT39xB" target="_blank"><div class="icon icon-discord"></div><div>Discord Chat</div></a>
                                 <a class="file-link" href="https://docs.kas.pa/kaspa/about-kaspa/get-started" target="_blank"><div class="icon icon-book"></div><div>Documentation</div></a>
                             </div>
 
                         </div>
                 </section>
-                <section column>
+                <!-- section column>
                     <div>
                         DAGViz Phantom visualizer and DAG explorer can be found at <a href="https://alpha.dagviz.com" target="_blank">https://alpha.dagviz.com</a><br/>&nbsp;
                     </div>
@@ -190,7 +169,7 @@ export class KdxPortal extends FlowApp {
                             <li>KDX includes and instance of KExplorer (Kaspa BlockDAG explorer) project configured against local instance of Kasparov API server.</li>
                         </ul>
                     </div>
-                </section>
+                </section -->
 
             </div>
             
@@ -217,72 +196,6 @@ export class KdxPortal extends FlowApp {
                             <img class="osx-workaround" style="width:360px;" src="resources/images/osx-open-app-by-overriding.png" />
                         </center>
                     </flow-expandable>
-                    <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
-                        <span slot="title">
-                            PostgreSQL fails to start on Windows. Enabling Advanced options and looking in the PostgreSQL terminal tab
-                            you can see errors related to Locale settings such as:<br/>
-                            <flow-code fixindent lang="text">
-                                <textarea>
-                                    WARNING: 01000: could not determine encoding 
-                                    for locale "English_<country>.utf8": codeset is "CPutf8"
-                                </textarea>
-                            </flow-code>
-                        </span>
-                        <p>
-                            Some OEM computers experience compatibility issue between PostgreSQL database module
-                            and certain types of <u>international (non-US) Windows 10 installations</u>.  This problem especially
-                            exists across DELL computers with manufacturer pre-installed Windows.
-                        </p>
-                        <p>
-                            <strong red>Symptoms:</strong> Postgres fails to start, giving errors related to Locale settings such as:
-                        &nbsp; <span monospace>WARNING: 01000: could not determine encoding for locale "English_Israel.utf8": codeset is "CPutf8"</span>
-                            
-                        </p>
-                        <p>
-                            Microsoft have introduced an experimental beta option for computer locale settings
-                            that causes a variety of application compatibility issues and on some OEM OS installations
-                            this option is turned on by default, which it should not be.
-                        </p>
-                        <p> If you are experiencing this, you need to apply the following workaround:</span></p>
-                        <br/>
-                        <p>
-                            <center>
-                                <h4>Open Control Panel and search for "Languages"</h4>
-                                <img class="workaround" src="resources/images/control-panel.png" />
-                            </center>
-                            <center>
-                                <h4>In the Languages panel select "Administrative Language Settings"</h4>
-                                <img class="workaround" src="resources/images/language-panel.png" />
-                            </center>
-                            <center>
-                                <h4>Select "Change system locale..."</h4>
-                                <img class="workaround" src="resources/images/region-settings.png" />
-                            </center>
-                            <center>
-                                <h4>Make sure that "Beta: Use Unicode UTF-8" checkbox if OFF</h4>
-                                <img class="workaround" src="resources/images/system-locale.png" />
-                            </center>
-                            <center><h4>Reboot your computer.</h4></center>
-                            <hr width="50%"/>
-                        </p>
-                    </flow-expandable>
-                    <flow-expandable xcaption="PostgreSQL modules fails to start on Windows">
-                        <span slot="title">
-                            PostgreSQL fails to start (development environment) with a similar message:<br/>
-                            <flow-code fixindent lang="text">
-                                <textarea>
-                                    Exiting...2020-10-07 20:48:00.165 [INF] KVSD: Version 0.7.2
-                                    2020-10-07 20:48:00.172 [CRT] KVSD: Exiting: Fatal error in goroutine 'main':
-                                    Error connecting to database: Database is not current (version 0). 
-                                    Please migrate the database by running the server with --migrate flag and then run it again
-                                </textarea>
-                            </flow-code>
-                        </span>
-                        <p>
-                            This occurs when Kasparov upgrades its database (PostgreSQL database schema).
-                            You can upgrade the database manually by running the <flow-code>migrate</flow-code> command from KDX Console.
-                        </p>
-                    </flow-expandable>
                     </section>
                 </div>
             </div>
@@ -294,15 +207,15 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v1.4.0-windows-x64.exe' : 'installer',
+            'kdx-v2.0.0-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
 //            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-v1.2.0-darwin-x64.dmg' : 'DMG',
+            '-kdx-v2.0.0-darwin-x64.dmg' : 'DMG',
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
-            '-kdx-v1.2.0-linux-x64.zip' : 'portable'
+            '-kdx-v2.0.0-linux-x64.zip' : 'portable'
         }).map(([file, descr]) => {
             let disable = '';
             if(file.charAt(0) == '-') {
@@ -332,12 +245,8 @@ export class KdxPortal extends FlowApp {
                 data-text="${file} ${descr}"
                 >
                 ${
-                    !/-dev-/.test(file) ? 
-                html`<div style="color:#666;"><div style="font-size:0.62em;"><b>STANDARD</b></div><div style="font-size:0.62em;">${descr.toUpperCase()}</div><div style="font-size:0.70em;">${size}</div></div>` : 
-                html`<div style="color:#666;"><div  style="font-size:0.62em;"><b>DEV</b></div><div style="font-size:0.62em;">${descr.toUpperCase()}</div><div style="font-size:0.70em;"><nobr>${size}</div></div>`
+                html`<div style="color:#666;"><div style="font-size:0.62em;"></div><div style="font-size:0.62em;">${descr.toUpperCase()}</div><div style="font-size:0.70em;">${size}</div></div>`
                 }
-                
-                
             </flow-download-badge>
             `;
         });
