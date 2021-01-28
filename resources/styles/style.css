@@ -74,6 +74,7 @@ li{padding:4px;}
 .disable{opacity:0.4;pointer-events:none;}
 [notice]{margin:8px 0px 8px 48px;}
 [red]{color:rgb(49, 8, 8);}
+[bright-red]{color:rgb(129, 33, 33);}
 .workaround{max-width:560px;height:auto;margin:8px 32px 32px 32px;border:2px solid #ccc;}
 .osx-workaround{max-width:460px;height:auto;margin:8px 32px 32px 32px;}
 [bold]{font-weight:bold;}
@@ -162,4 +163,10 @@ body.flow-theme-light .file-list{
 
 body {
     --flow-download-badge-title-min-width: 250px;
+}
+
+[attn] {
+    padding: 8px;
+    background-color:rgb(255, 238, 238);
+    border: 1px solid salmon;
 }
