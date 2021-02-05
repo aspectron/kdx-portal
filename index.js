@@ -208,7 +208,7 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v2.0.0-windows-x64.exe' : 'installer',
+            'kdx-v2.0.1-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
 //            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
