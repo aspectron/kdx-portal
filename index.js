@@ -109,8 +109,8 @@ export class KdxPortal extends FlowApp {
                             </div>
 
                             <div style="max-width:400px;">
-                                Current release: &nbsp; KDX 2.0.0 &nbsp; Kaspa 0.8.6-dev<br/>&nbsp;<br/>
-                                <div bright-red attn>After downloading KDX, you can get Kaspa from the Kaspa Faucet at <a href="https://faucet.kdx.app" target="_blank">https://faucet.kdx.app</a></div>
+                                Current release: &nbsp; KDX 2.3.0 &nbsp; Kaspa 0.9.2-dev<br/>&nbsp;<br/>
+                                <div bright-red attn>After downloading KDX, you can get Kaspa from the Kaspa Faucet at <a href="https://faucet.kaspanet.io" target="_blank">https://faucet.kaspanet.io</a></div>
                                 
                             </div>
 
@@ -144,7 +144,7 @@ export class KdxPortal extends FlowApp {
                             </div>
                             <div><h2>Kaspa Resources</h2></div>
                             <div>
-                                <a class="file-link" href="https://faucet.kdx.app" target="_blank"><div class="icon icon-faucet"></div><div>Kaspa Faucet</div></a>
+                                <a class="file-link" href="https://faucet.kaspanet.io" target="_blank"><div class="icon icon-faucet"></div><div>Kaspa Faucet</div></a>
                                 <a class="file-link" href="https://discord.gg/vMT39xB" target="_blank"><div class="icon icon-discord"></div><div>Discord Chat</div></a>
                                 <a class="file-link" href="https://docs.kas.pa/kaspa/about-kaspa/get-started" target="_blank"><div class="icon icon-book"></div><div>Documentation</div></a>
                             </div>
