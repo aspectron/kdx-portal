@@ -208,10 +208,12 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
+            'kdx-v2.6.1-windows-x64.exe' : 'installer',
             'kdx-v2.5.2-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
 //            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
+            'kdx-v2.6.1-darwin-x64.dmg' : 'DMG',
             'kdx-v2.5.2-darwin-x64.dmg' : 'DMG',
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
