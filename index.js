@@ -95,15 +95,15 @@ export class KdxPortal extends FlowApp {
                         <div class='separator'></div>
                         <div flex>&nbsp;</div>
                         <div>
-                            <div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;whitespace:nowrap;"><center><b>WE ARE UPDATING...</b><br/>
+                            <!-- div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;whitespace:nowrap;"><center><b>WE ARE UPDATING...</b><br/>
                                 DOWNLOADS WILL BE AVAILABLE<br/>IN THE COMING DAYS</center>
-                            </div>
-<!--
+                            </div -->
+
                             <div><h2>Download KDX</h2></div>
--->
+
                             <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
 
-<!--
+
                             <flow-selector id="file-list" label="Select file" hidefilter selected="${files.selected}"
                                 class="file-list">${files.contents}</flow-selector>
                             <flow-btn @click="${this.onDownloadClick}">Download</flow-btn> 
@@ -152,8 +152,6 @@ export class KdxPortal extends FlowApp {
                                 <a class="file-link" href="https://discord.gg/vMT39xB" target="_blank"><div class="icon icon-discord"></div><div>Discord Chat</div></a>
                                 <a class="file-link" href="https://docs.kas.pa/kaspa/about-kaspa/get-started" target="_blank"><div class="icon icon-book"></div><div>Documentation</div></a>
                             </div>
-
--->
 
                         </div>
                 </section>
