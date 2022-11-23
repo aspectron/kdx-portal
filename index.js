@@ -113,7 +113,7 @@ export class KdxPortal extends FlowApp {
                             </div>
 
                             <div style="max-width:400px;">
-                                Current release: &nbsp; KDX 2.11.3 &nbsp; Kaspa 0.12.9 (master)<br/>&nbsp;<br/>
+                                Current release: &nbsp; KDX 2.11.3 &nbsp; Kaspa 0.12.10 (master)<br/>&nbsp;<br/>
                                 <div bright-red attn>After downloading KDX, you can get Kaspa from the Kaspa Faucet at <a href="https://faucet.kaspanet.io" target="_blank">https://faucet.kaspanet.io</a></div>
                                 
                             </div>
