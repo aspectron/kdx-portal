@@ -36,7 +36,7 @@ export class KdxPortal extends FlowApp {
         let files = this.renderFiles();
         return html`
         <flow-app-layout floating-drawer>
-            <img slot="header" class="logo" src="resources/images/kdx.svg" />
+            <img slot="header" class="logo" src="resources/images/kaspa.png" />
             <div slot="header"><h2>KDX<!-- span class='beta'>BETA</span --></h2></div>
             <div slot="header" class="flex"></div>
             <div slot="header" class="top-menus" @click="${this.onTopMenuClick}">
@@ -113,7 +113,7 @@ export class KdxPortal extends FlowApp {
                             </div>
 
                             <div style="max-width:400px;">
-                                Current release: &nbsp; KDX 2.11.3 &nbsp; Kaspa 0.12.10 (master)<br/>&nbsp;<br/>
+                                Current release: &nbsp; KDX 2.12.0 &nbsp; Kaspa 0.12.10 (master)<br/>&nbsp;<br/>
                                 <div bright-red attn>After downloading KDX, you can get Kaspa from the Kaspa Faucet at <a href="https://faucet.kaspanet.io" target="_blank">https://faucet.kaspanet.io</a></div>
                                 
                             </div>
@@ -212,17 +212,17 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v2.11.3-windows-x64.exe' : 'installer',
+            'kdx-v2.12.0-windows-x64.exe' : 'installer',
 //            'kdx-v2.10.0-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
 //            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-v2.11.3-darwin-x64.dmg' : 'DMG',
+            'kdx-v2.12.0-darwin-x64.dmg' : 'DMG',
 //            'kdx-v2.5.2-darwin-x64.dmg' : 'DMG',
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
-            '-kdx-v2.11.3-linux-x64.zip' : 'portable'
+            '-kdx-v2.12.0-linux-x64.zip' : 'portable'
         }).map(([file, descr]) => {
             let disable = '';
             if(file.charAt(0) == '-') {
