@@ -113,7 +113,7 @@ export class KdxPortal extends FlowApp {
                             </div>
 
                             <div style="max-width:400px;">
-                                Current release: &nbsp; KDX 2.12.2 &nbsp; Kaspa 0.12.13 (master)<br/>&nbsp;<br/>
+                                Current release: &nbsp; KDX 2.12.3 &nbsp; Kaspa 0.12.13 (master)<br/>&nbsp;<br/>
                                 <div bright-red attn>After downloading KDX, you can get Kaspa from the Kaspa Faucet at <a href="https://faucet.kaspanet.io" target="_blank">https://faucet.kaspanet.io</a></div>
                                 
                             </div>
@@ -212,7 +212,7 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v2.12.2-windows-x64.exe' : 'installer',
+            'kdx-v2.12.3-windows-x64.exe' : 'installer',
 //            'kdx-v2.10.0-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
