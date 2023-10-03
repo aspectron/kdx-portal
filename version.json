@@ -1,11 +1,11 @@
 {
     "darwin" : {
-        "version" : "2.12.3"
+        "version" : "2.12.6"
     },
     "win32" : {
-        "version" : "2.12.3"
+        "version" : "2.12.6"
     },
     "linux" : {
-        "version" : "2.12.2"
+        "version" : "2.12.6"
     }
 }
