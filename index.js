@@ -124,7 +124,7 @@ export class KdxPortal extends FlowApp {
                             
                             <div>
                                 <span class="file-link" href=""><div class="icon icon-docker"></div><div>
-                                    Docker images can be generated<br/> directly from KDX sources.
+                                    For Docker images, head over to <a href="https://hub.docker.com/r/supertypo/kaspad">supertypo/kaspad</a>.
                                 </div></span>
                                 
                             </div>
@@ -222,7 +222,7 @@ export class KdxPortal extends FlowApp {
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
-            '-kdx-v2.12.6-linux-x64.zip' : 'portable'
+            'kdx-v2.12.6-linux-x64.tar.gz' : 'portable'
         }).map(([file, descr]) => {
             let disable = '';
             if(file.charAt(0) == '-') {
