@@ -212,7 +212,7 @@ export class KdxPortal extends FlowApp {
         let userOS = this.getOS();
         let selected = '';
         let contents = Object.entries({
-            'kdx-v2.12.6-windows-x64.exe' : 'installer',
+            'kdx-v2.12.6.1-windows-x64.exe' : 'installer',
 //            'kdx-v2.10.0-windows-x64.exe' : 'installer',
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
@@ -222,7 +222,7 @@ export class KdxPortal extends FlowApp {
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
             //'-kdx-1.0.3-darwin-x64.zip' : 'portable',
-            'kdx-v2.12.6-linux-x64.tar.gz' : 'portable'
+            'kdx-v2.12.6.1-linux-x64.tar.gz' : 'portable'
         }).map(([file, descr]) => {
             let disable = '';
             if(file.charAt(0) == '-') {
@@ -268,7 +268,7 @@ export class KdxPortal extends FlowApp {
           os = null;
 
         if (macosPlatforms.indexOf(platform) !== -1) {
-            os = 'darwin';
+            os = 'macos';
         } else if (iosPlatforms.indexOf(platform) !== -1) {
             os = 'ios';
         } else if (windowsPlatforms.indexOf(platform) !== -1) {
