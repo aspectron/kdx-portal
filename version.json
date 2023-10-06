@@ -1,11 +1,15 @@
 {
+    "macos" : {
+        "version" : "2.12.6"
+    },
     "darwin" : {
         "version" : "2.12.6"
     },
     "win32" : {
-        "version" : "2.12.6"
+        "version" : "2.12.7"
     },
     "linux" : {
-        "version" : "2.12.6"
+        "version" : "2.12.7"
     }
 }
+
