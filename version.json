@@ -6,10 +6,10 @@
         "version" : "2.12.6"
     },
     "win32" : {
-        "version" : "2.12.7"
+        "version" : "2.12.8"
     },
     "linux" : {
-        "version" : "2.12.7"
+        "version" : "2.12.8"
     }
 }
 
