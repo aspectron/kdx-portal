@@ -217,7 +217,7 @@ export class KdxPortal extends FlowApp {
 //            'kdx-dev-v1.2.0-windows-x64.exe' : 'installer',
 //            'kdx-v1.2.0-windows-x64.zip' : 'portable',
 //            'kdx-dev-v1.2.0-windows-x64.zip' : 'portable',
-            'kdx-v2.12.6-macos-x64.dmg' : 'DMG',
+            'kdx-v2.12.8-macos-x64.dmg' : 'DMG',
 //            'kdx-v2.5.2-darwin-x64.dmg' : 'DMG',
 //            'kdx-dev-v1.2.0-darwin-x64.dmg' : 'DMG',
             //'kdx-v1.2.0-darwin-x64.tar.gz' : 'portable',
