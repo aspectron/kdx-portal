@@ -54,6 +54,8 @@ export class KdxPortal extends FlowApp {
                 <div for="home" class="tab-content">
                     <section>
                         <div class='intro'>
+                            <h3 style="color:rgb(136, 7, 7);">Please note that KDX has been deprecated. Please use the <a href="https://github.com/aspectron/kaspa-ng" target="_blank">Kaspa NG</a> - a new desktop node application developed to replace KDX.</h3>
+                            <hr/>
                             <p>KDX process manager provides zero-effort installation and configuration of the Kaspa 
                             full-node software and the Kaspa Wallet when running in a desktop operating system environment.</p>
 
@@ -97,12 +99,15 @@ export class KdxPortal extends FlowApp {
                         <div>
                             <!-- div style="background-color:#fcc;padding:16px;border:1px solid #ccc;border-radius:10px;whitespace:nowrap;"><center><b>WE ARE UPDATING...</b><br/>
                                 DOWNLOADS WILL BE AVAILABLE<br/>IN THE COMING DAYS</center>
-                            </div -->
-
+                                
                             <div><h2>Download KDX</h2></div>
+                            
+                            </div -->
 
                             <!-- div red notice><i xclass="fal fa-exclamation-triangle fa-lg"></i>Please read Known Problems</div -->
 
+
+                            <!--
 
                             <flow-selector id="file-list" label="Select file" hidefilter selected="${files.selected}"
                                 class="file-list">${files.contents}</flow-selector>
@@ -146,6 +151,9 @@ export class KdxPortal extends FlowApp {
                                     <li>Kaspa testnet SHA256 miner</li>
                                 </ul>
                             </div>
+
+                            -->
+
                             <div><h2>Kaspa Resources</h2></div>
                             <div>
                                 <a class="file-link" href="https://faucet.kaspanet.io" target="_blank"><div class="icon icon-faucet"></div><div>Kaspa Faucet</div></a>
